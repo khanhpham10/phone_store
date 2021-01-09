@@ -1,12 +1,16 @@
-# Thông tin về Tác giả
-Mã sinh viên: ...
-Họ tên: ...
+# Thông tin về Tác giả 1
+Mã sinh viên: D20210
+Họ tên: Phạm Duy Khánh
+
+# Thông tin về Tác giả 2
+Mã sinh viên: D20196
+Họ tên: Huỳnh Hữu Phúc
 
 # Hướng dẫn cách sử dụng dự án
 ## Step 1: Clone source dự án
 Thực thi câu lệnh sau:
 ```
-git clone <link đường dẫn github>
+git clone <https://github.com/khanhpham10/phone_store.git>
 ```
 
 ## Step 2: Khởi tạo, kết nối database
@@ -15,9 +19,9 @@ Hiệu chỉnh file .env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=tendatabase
+DB_DATABASE=db_phonestore
 DB_USERNAME=root
-DB_PASSWORD=matkhau
+DB_PASSWORD=
 ```
 
 ## Step 3: Tạo database, thực hiện migrate
@@ -38,7 +42,7 @@ php artisan db:seed
 
 ## Step 6: thông tin tài khoản truy cập hệ thống
 Tài khoản Admin:
-admin / 123456
+admin@gmail.com / admin@123
 
 Tài khoản Quản lý kho:
 kho / 123456
