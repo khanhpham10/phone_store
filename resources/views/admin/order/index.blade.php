@@ -92,7 +92,7 @@
                 <th data-orderable="false" data-width="70px">Điện Thoại</th>
                 <th data-orderable="false">Phương Thức Thanh Toán</th>
                 <th data-width="60px" data-type="date-euro">Ngày Tạo</th>
-                <th data-orderable="false" data-width="40px">Tác Vụ</th>
+                <th data-orderable="false" data-width="40px">In Đơn</th>
               </tr>
             </thead>
             <tbody>
