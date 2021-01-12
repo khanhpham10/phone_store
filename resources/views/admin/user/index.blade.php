@@ -113,7 +113,7 @@
                 <th data-orderable="false">Địa Chỉ</th>
                 <th data-width="60px" data-type="date-euro">Ngày Tạo</th>
                 <th data-width="66px">Trạng Thái</th>
-                <th data-orderable="false" data-width="70px">Sửa_Xóa</th>
+                <th data-orderable="false" data-width="70px">Xem</th>
               </tr>
             </thead>
             <tbody>
