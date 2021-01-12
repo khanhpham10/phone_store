@@ -110,7 +110,7 @@
                   <td> {{ \Carbon\Carbon::parse($order->created_at)->format('d/m/Y')}}</td>
                   <td>
                     <a href="{{ route('admin.order.show', ['id' => $order->id]) }}" class="btn btn-icon btn-sm btn-primary tip" title="Chi Tiết">
-                      <i class="fa fa-eye" aria-hidden="true"></i>
+                      <i class="fa fa-print" aria-hidden="true"></i>
                     </a>
                   </td>
                 </tr>
