@@ -14,6 +14,9 @@ class CreateOrderDetailsTable extends Migration
     public function up()
     {
         Schema::create('order_details', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
             $table->bigIncrements('id');
 
             $table->unsignedBigInteger('order_id');
@@ -21,8 +24,8 @@ class CreateOrderDetailsTable extends Migration
             $table->unsignedBigInteger('product_detail_id');
             $table->foreign('product_detail_id')->references('id')->on('product_details');
 
-            $table->integer('quantity')->default(1);
-            $table->integer('price');
+            $table->integer('quantity')->default(1)->comment('Số lượng đặt');
+            $table->integer('price')->comment('Giá bán sản phẩm');
             $table->timestamps();
         });
     }
@@ -34,6 +37,6 @@ class CreateOrderDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('order_details');
+        Schema::drop('order_details');
     }
 }

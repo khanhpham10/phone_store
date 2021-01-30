@@ -14,13 +14,16 @@ class CreatePostsTable extends Migration
     public function up()
     {
         Schema::create('posts', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
 
-            $table->string('title');
-            $table->string('image');
-            $table->longText('content');
+            $table->string('title')->comment('Chủ đề bài đăng');
+            $table->string('image')->comment('tên file hình sản phẩm');
+            $table->longText('content')->comment('Nội dung bài đăng');
             $table->timestamps();
         });
     }
@@ -32,6 +35,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::drop('posts');
     }
 }

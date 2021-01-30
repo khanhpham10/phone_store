@@ -14,6 +14,9 @@ class CreateProductVotesTable extends Migration
     public function up()
     {
         Schema::create('product_votes', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
             $table->bigIncrements('id');
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
@@ -32,6 +35,6 @@ class CreateProductVotesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_votes');
+        Schema::drop('product_votes');
     }
 }

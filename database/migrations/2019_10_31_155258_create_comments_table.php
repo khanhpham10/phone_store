@@ -14,6 +14,9 @@ class CreateCommentsTable extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
             $table->bigIncrements('id');
             $table->unsignedBigInteger('comment_id')->nullable();
             $table->foreign('comment_id')->references('id')->on('comments');
@@ -21,8 +24,7 @@ class CreateCommentsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('product_id');
             $table->foreign('product_id')->references('id')->on('products');
-
-            $table->string('content');
+            $table->string('content')->comment('Nội dung comment');
             $table->timestamps();
         });
     }
@@ -34,6 +36,6 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments');
+        Schema::drop('comments');
     }
 }

@@ -14,13 +14,16 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('payment_method_id');
             $table->foreign('payment_method_id')->references('id')->on('payment_methods');
 
-            $table->string('order_code');
+            $table->string('order_code')->comment('Mã số đơn hàng');
             $table->string('name');
             $table->string('email');
             $table->string('phone');
@@ -37,6 +40,6 @@ class CreateOrdersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::drop('orders');
     }
 }

@@ -14,9 +14,12 @@ class CreatePaymentMethodsTable extends Migration
     public function up()
     {
         Schema::create('payment_methods', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('describe')->nullable();
+            $table->string('name')->comment('Tên hình thức thanh toán');
+            $table->string('describe')->nullable()->comment('Mô tả hình thức thanh toán');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreatePaymentMethodsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('payment_methods');
+        Schema::drop('payment_methods');
     }
 }

@@ -14,6 +14,9 @@ class CreateProductImagesTable extends Migration
     public function up()
     {
         Schema::create('product_images', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
             $table->bigIncrements('id');
             $table->unsignedBigInteger('product_detail_id');
             $table->foreign('product_detail_id')->references('id')->on('product_details');
@@ -29,6 +32,6 @@ class CreateProductImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_images');
+        Schema::drop('product_images');
     }
 }

@@ -14,15 +14,17 @@ class CreateAdvertisesTable extends Migration
     public function up()
     {
         Schema::create('advertises', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_unicode_ci';
             $table->bigIncrements('id');
             $table->unsignedBigInteger('product_id')->nullable();
             $table->foreign('product_id')->references('id')->on('products');
-
-            $table->string('title');
-            $table->string('image');
+            $table->string('title')->comment('Chủ đề quảng cáo');
+            $table->string('image')->comment('Tên file hình sản phẩm');
             $table->boolean('at_home_page')->default(0);
-            $table->date('start_date');
-            $table->date('end_date');
+            $table->date('start_date')->comment('Ngày bắt đầu quảng cáo');
+            $table->date('end_date')->comment('ngày kết thúc quảng cáo');
             $table->timestamps();
         });
     }
@@ -34,6 +36,6 @@ class CreateAdvertisesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('advertises');
+        Schema::drop('advertises');
     }
 }
