@@ -13,7 +13,7 @@ class ordersTableSeeder extends Seeder
     {
         $list = [];
 
-        $user_id = ["3", "3", "3", "3"];
+        $user_id = ["2", "2", "2", "2"];
         $status = ["1", "1", "1", "1"];
         $payment_method_id = ["1", "2", "2", "1"];
         $order_code = ["PSO16739", "PSO36441", "PSO57787", "PSO13318"];
