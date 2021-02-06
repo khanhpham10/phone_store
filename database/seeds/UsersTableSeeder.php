@@ -20,8 +20,8 @@ class UsersTableSeeder extends Seeder
             'address'    =>  'NinhKieu-CầnTho',
             'avatar_image'    =>  '1577128193_avatar.jpg',
             'password'  =>  bcrypt('admin@123'),
-            'created_at'    =>  date('Y-m-d H:i:s', strtotime('now')),
-            'updated_at'    =>  date('Y-m-d H:i:s', strtotime('now')),
+            'created_at'    =>  '2019-12-23 10:12:33',
+            'updated_at'    =>  '2019-12-23 10:12:33',
         ]);
         DB::table('users')->insert([
             'name' => 'Khánh Phạm',
@@ -32,8 +32,8 @@ class UsersTableSeeder extends Seeder
             'address'    =>  'NinhKieu-CầnTho',
             'avatar_image'    =>  '1577128193_avatar.jpg',
             'password'  =>  bcrypt('123456'),
-            'created_at'    =>  date('Y-m-d H:i:s', strtotime('now')),
-            'updated_at'    =>  date('Y-m-d H:i:s', strtotime('now')),
+            'created_at'    =>  '2019-12-24 01:02:53',
+            'updated_at'    =>  '2019-12-24 01:02:53',
         ]);
     }
 }
