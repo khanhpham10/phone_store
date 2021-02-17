@@ -60,6 +60,16 @@
                 <span class="fas fa-id-card"></span>
                 {{ __('header.Contact') }}</a>
               </li>
+              <li class="nav-item">
+              <a href="{{ route('app.setLocale', ['locale' => 'en']) }}" class="flex-c-m trans-04 p-lr-25">
+                        EN
+                    </a>
+              </li>
+              <li class="nav-item">
+              <a href="{{ route('app.setLocale', ['locale' => 'vn']) }}" class="flex-c-m trans-04 p-lr-25">
+                        VN
+                    </a>
+              </li>
             </ul>
           </div>
           <div class="accout-menu">

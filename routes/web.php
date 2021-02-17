@@ -13,7 +13,14 @@
 
 Auth::routes();
 Route::get('active/{token}', 'Auth\RegisterController@activation')->name('active_account');
-
+Route::post('/contact/goi-loi-nhan', 'Mail\SendMailcontroller@sendMailContactForm')->name('contact.sendMailContactForm');
+Route::get('setLocale/{locale}', function ($locale) {
+  if (in_array($locale, Config::get('app.locales'))) {
+    Session::put('locale', $locale);
+  }
+  return redirect()->back();
+})->name('app.setLocale');
+Route::get('/thongke', 'Frontend\FrontendController@thongke')->name('pages.thongke');
 /*
 |--------------------------------------------------------------------------
 | Admin Routes
@@ -58,6 +65,10 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->middleware('admin')
 
   Route::get('statistic', 'StatisticController@index')->name('statistic');
   Route::post('statistic/change', 'StatisticController@edit')->name('statistic.edit');
+  // Tạo route Báo cáo Đơn hàng
+Route::get('/admin/baocao/donhang', 'Backend\BaoCaoController@donhang')->name('backend.baocao.donhang');
+Route::get('/admin/baocao/donhang/data', 'Backend\BaoCaoController@donhangData')->name('backend.baocao.donhang.data');
+
 });
 
 Route::namespace('Pages')->group(function () {

@@ -2,7 +2,7 @@
 
   return [
     'AboutUs'          =>      'About Us',
-    'address'          =>      'No.1 Dai Co Viet, Bach Khoa, Hai Ba Trung, Hanoi.',
+    'address'          =>      '172B 3/2 Street, Hung Loi Ward, Ninh Kieu District, Can Tho City',
     'FollowUs'         =>      'Follow Us',
     'visa'             =>      'Visa method',
     'mastercard'       =>      'MasterCard method',
